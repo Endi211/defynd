@@ -1,0 +1,622 @@
+{% extends 'litigation_app/base.html' %}
+{% load i18n admin_urls static admin_modify i18n_switcher %}
+
+{% block body %}
+
+
+<div class="custom-dropdown">
+          <div class="custom-toggle-dropdown" id="language-select" onclick="toggleLanguageDropDown()">
+
+
+              {% if '/en/' in request.path %}
+                    English
+                  {% else %}
+                    Italian
+                    {% endif %}
+
+          </div>
+            <div class="custom-dropdown-content" id="languageDropdown" style="display: none;">
+
+                <div>
+                  <a href="{{ request|switch_i18n:'en' }}" class="custom-dropdown-option">
+                    English
+                  </a>
+                </div>
+
+                <div>
+                  <a href="{{ request|switch_i18n:'it' }}" class="custom-dropdown-option">
+                    Italian
+                  </a>
+                </div>
+
+
+            </div>
+        </div>
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li  {% if message.tags %} class=" {{ message.tags }} card-panel teal lighten-2 " {% endif %} > {{ message }} </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<h4> {% trans "Litigation Form" %} </h4>
+
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+
+
+                <div class="select-field col l6 m6 s12">
+                    <label for="id_dispute_matter">{% trans "Dispute Matter" %}</label>
+                    {{ form.dispute_matter }}
+                </div>
+                <div class="select-field col l6 m6 s12">
+                    <label for="id_dispute_object">{% trans "Dispute Object" %}</label>
+                    {{ form.dispute_object }}
+                </div>
+
+
+                <div class="input-field col l6 m6 s12">
+                     <label for="id_initial_estimation_value">{% trans "Initial Estimation Value" %}</label>
+
+                    {{ form.initial_estimation_value }}
+                    <div style="position: absolute; right: 17px; top: 40%; font-size: 16px; font-weight: 400; transform: translateY(-50%);">€</div>
+
+                </div>
+
+                <div class="input-field col l6 m6 s12">
+                    {{ form.target_value }}
+                     <label for="id_target_value">{% trans "Target Value" %}</label>
+                    <div style="position: absolute; right: 17px; top: 40%; font-size: 16px; font-weight: 400; transform: translateY(-50%);">€</div>
+                </div>
+
+
+
+
+
+                <h4> {% trans "Registration" %} </h4>
+                <div class="select-field col s6">
+                    <label for="id_registration_type">{% trans "Registration Type" %}</label>
+                    {{ form.registration_type }}
+                </div>
+
+                <div class="input-field col s6" style="margin-top: 22.5px">
+                <label for="id_prejudicial_registrations">{% trans "Prejudicial Registrations" %}</label>
+                    {{ form.prejudicial_registrations }}
+
+                </div>
+
+                <div class="input-field col s12">
+                    <label for="id_enrollment_amount">{% trans "Enrollment Amount" %}</label>
+                    {{ form.enrollment_amount }}
+                    <div style="position: absolute; right: 17px; top: 40%; font-size: 16px; font-weight: 400; transform: translateY(-50%);">€</div>
+
+                </div>
+
+                <h4> {% trans "Reference" %} </h4>
+                <div class="select-field col s12">
+                    <label for="id_lawyer_reference">{% trans "Lawyer Reference" %}</label>
+                    {{ form.lawyer_reference }}
+
+                </div>
+                <div class="input-field col s12">
+                     <label for="id_reference">{% trans "Reference" %}</label>
+                    {{ form.reference }}
+
+                </div>
+
+                <h4>{% trans "Area" %}</h4>
+                 <div class="input-field col l4 m4 s12">
+                     <label for="id_surface_directly_concerned">{% trans "Surface Directly Concerned" %}</label>
+                    {{ form.surface_directly_concerned }}
+                     <div style="position: absolute; right: 17px; top: 40%; font-size: 16px; font-weight: 400; transform: translateY(-50%);">m<sup>2</sup></div>
+                </div>
+                 <div class="input-field col l4 m4 s12">
+                     <label for="id_occupied_area">{% trans "Occupied Area" %}</label>
+                    {{ form.occupied_area }}
+                     <div style="position: absolute; right: 17px; top: 40%; font-size: 16px; font-weight: 400; transform: translateY(-50%);">m<sup>2</sup></div>
+                </div>
+                 <div class="input-field col l4 m4 s12">
+
+                    {{ form.residual_surface }}
+                     <small id="residual-text" class="form-text text-muted">{% trans "Residual Surface" %}</small>
+                     <div style="position: absolute; right: 17px; top: 40%; font-size: 16px; font-weight: 400; transform: translateY(-50%);">m<sup>2</sup></div>
+                </div>
+                <div class="input-field col s12">
+                     <label for="id_area_address">{% trans "Area Address" %}</label>
+                    {{ form.area_address }}
+                </div>
+
+                <h4> {% trans "Building" %} </h4>
+
+{#                    Agricultural Export #}
+                <div class="select-field col s12 reg-1">
+                    <label for="id_culture_type">{% trans "Culture Type" %}</label>
+                    {{ form.culture_type }}
+                </div>
+
+
+                <div class="input-field col s12">
+                    <label for="id_above_ground_quantification">{% trans "Above Ground Quantification" %}</label>
+                    {{ form.above_ground_quantification }}
+                </div>
+
+
+
+
+            <div class="col s4 reg-1">
+                <div class="row radio-field ">
+    <div class="col s12">
+        <label for="id_fruit_pendants_0" class="">{% trans "Fruit Pendants" %}</label>
+    </div>
+    <div class="col s12">
+        <div class="radio" id="id_fruit_pendants">
+            <label>
+            {{ form.fruit_pendants.1.tag }}
+            <span class="item-label">{% trans "Yes" %}</span>
+        </label>
+        </div>
+        <div class="radio" id="id_fruit_pendants">
+            <label>
+            {{ form.fruit_pendants.2.tag }}
+            <span class="item-label" >No</span>
+        </label>
+        </div>
+    </div>
+</div> </div>
+
+
+                 <div class="select-field col s4 reg-1">
+                    <label for="id_cultivator_type">{% trans "Cultivator Type" %}</label>
+                    {{ form.cultivator_type }}
+                </div>
+
+
+                <div class="col s4 reg-1">
+                <div class="row radio-field">
+    <div class="col s12">
+        <label for="id_batch_disfiguration_0" class="">{% trans "Batch Disfiguration" %}</label>
+    </div>
+    <div class="col s12">
+        <div class="radio" id="id_batch_disfiguration">
+            <label>
+            {{ form.batch_disfiguration.1.tag }}
+            <span class="item-label">{% trans "Yes" %}</span>
+        </label>
+        </div>
+        <div class="radio" id="id_batch_disfiguration">
+            <label>
+            {{ form.batch_disfiguration.2.tag }}
+            <span class="item-label">No</span>
+        </label>
+        </div>
+    </div>
+</div> </div>
+
+
+
+
+
+                <div class="input-field col s12 reg-1">
+                    <label for="id_description">{% trans "Description" %}</label>
+                    {{ form.description }}
+                </div>
+
+{#                Expropriation Residential Industrial Building #}
+
+
+
+                <div class="col s6 reg-2">
+                <div class="row radio-field ">
+    <div class="col s12">
+        <label for="id_social_economic_reform_0">{% trans "Social Economic Reform" %}</label>
+    </div>
+    <div class="col s12">
+        <div class="radio" id="id_social_economic_reform">
+            <label>
+            {{ form.social_economic_reform.1.tag }}
+            <span class="item-label">{% trans "Yes" %}</span>
+        </label>
+        </div>
+        <div class="radio" id="id_social_economic_reform">
+            <label>
+            {{ form.social_economic_reform.2.tag }}
+            <span class="item-label" >No</span>
+        </label>
+        </div>
+    </div>
+</div> </div>
+
+
+
+
+                <div class="select-field col s6 reg-2">
+                    <label for="id_urban_destination">{% trans "Urban Destination" %}</label>
+                    {{ form.urban_destination }}
+                </div>
+
+
+
+                <div class="col s12 " id="imu-trans-coeff">
+                <div class="input-field col s6 reg-2">
+                    <label for="id_transformation_coefficient">{% trans "Transformation Coefficient" %}</label>
+                    {{ form.transformation_coefficient }}
+                </div>
+                <div class="input-field col s6 reg-2">
+                    <label for="id_IMU_final_declaration">{% trans "IMU Final Declaration" %}</label>
+                    {{ form.IMU_final_declaration }}
+                </div>
+                </div>
+
+{#                Esproprio Fabbricato Residenziale #}
+                <div class="input-field col s6 reg-3">
+                    <label for="id_epoch_construction">{% trans "Epoch Construction" %}</label>
+                    {{ form.epoch_construction }}
+                </div>
+                <div class="input-field col s6  reg-3">
+                     <label for="id_building_titles">{% trans "Building Titles" %}</label>
+                    {{ form.building_titles }}
+                </div>
+                <div class="layout-row row">
+                <div class="input-field col s6 reg-3">
+                    <label for="id_extension_MQ">{% trans "Extension MQ" %}</label>
+                    {{ form.extension_MQ }}
+                    <div style="position: absolute; right: 17px; top: 40%; font-size: 16px; font-weight: 400; transform: translateY(-50%);">m<sup>2</sup></div>
+                </div>
+                <div class="input-field col s6 reg-3" id="field-mc_residui">
+                    <label for="id_mc_residui">{% trans "MC Residui" %}</label>
+                    {{ form.MC_residui }}
+                    <div style="position: absolute; right: 17px; top: 40%; font-size: 16px; font-weight: 400; transform: translateY(-50%);">m<sup>2</sup></div>
+                </div>
+                    </div>
+
+
+
+                <div class="layout-row row">
+    <div class="col s12 m3">
+                <div class="col s12 reg-3">
+                <div class="row radio-field ">
+    <div class="col s12">
+        <label for="id_total_demolition_0">{% trans "Total Demolition" %}</label>
+    </div>
+    <div class="col s12">
+        <div class="radio" id="id_total_demolition">
+            <label>
+            {{ form.total_demolition.1.tag }}
+            <span class="item-label">{% trans "Yes" %}</span>
+        </label>
+        </div>
+        <div class="radio" id="id_total_demolition">
+            <label>
+            {{ form.total_demolition.2.tag }}
+            <span class="item-label">No</span>
+        </label>
+        </div>
+    </div>
+</div> </div>
+</div>
+
+                    <div class="col s12 m3">
+                <div class="row">
+                <div class="input-field col s12 reg-3" id="field-partial_demolition">
+                    <label for="id_partial_demolition">{% trans "Partial Demolition" %}</label>
+                    {{ form.partial_demolition }}
+                </div>
+</div>
+                    </div>
+
+
+                    <div class="col s12 m3">
+                <div class="col s12 reg-3">
+                <div class="row radio-field ">
+    <div class="col s12">
+        <label for="id_residual_airspace_0">{% trans "Residual Airspace" %}</label>
+    </div>
+    <div class="col s12">
+        <div class="radio" id="id_residual_airspace">
+            <label>
+            {{ form.residual_airspace.1.tag }}
+            <span class="item-label">{% trans "Yes" %}</span>
+        </label>
+        </div>
+        <div class="radio" id="id_residual_airspace">
+            <label>
+            {{ form.residual_airspace.2.tag }}
+            <span class="item-label" >No</span>
+        </label>
+        </div>
+    </div>
+</div> </div>
+                    </div>
+
+
+
+                    <div class="col s12 m3">
+                <div class="col s12 reg-3">
+                <div class="row radio-field ">
+    <div class="col s12">
+        <label for="id_storage_state_0">{% trans "Storage State" %}</label>
+    </div>
+    <div class="col s12">
+        <div class="radio" id="id_storage_state">
+            <label>
+            {{ form.storage_state.1.tag }}
+            <span class="item-label">{% trans "Great" %}</span>
+        </label>
+        </div>
+        <div class="radio" id="id_storage_state">
+            <label>
+            {{ form.storage_state.2.tag }}
+            <span class="item-label" >{% trans "Good" %}</span>
+        </label>
+        </div>
+         <div class="radio" id="id_storage_state">
+            <label>
+            {{ form.storage_state.3.tag }}
+            <span class="item-label" >{% trans "Enough" %}</span>
+        </label>
+        </div>
+         <div class="radio" id="id_storage_state">
+            <label>
+            {{ form.storage_state.4.tag }}
+            <span class="item-label" >{% trans "To be Restructured" %}</span>
+        </label>
+        </div>
+    </div>
+</div> </div>
+
+</div>
+                </div>
+
+
+                <div class="col s6 reg-3">
+                <div class="row radio-field ">
+    <div class="col s12">
+        <label for="id_lease_agreement_0">{% trans "Lease Agreement" %}</label>
+    </div>
+    <div class="col s12">
+        <div class="radio" id="id_lease_agreement">
+            <label>
+            {{ form.lease_agreement.1.tag }}
+            <span class="item-label">{% trans "Yes" %}</span>
+        </label>
+        </div>
+        <div class="radio" id="id_lease_agreement">
+            <label>
+            {{ form.lease_agreement.2.tag }}
+            <span class="item-label" > No</span>
+        </label>
+        </div>
+    </div>
+</div> </div>
+
+
+
+
+
+<div class="col s6 reg-3">
+                <div class="row radio-field ">
+    <div class="col s12">
+        <label for="id_productive_activities_0">{% trans "Productive Activities" %}</label>
+    </div>
+    <div class="col s12">
+        <div class="radio" id="id_productive_activities">
+            <label>
+            {{ form.productive_activities.1.tag }}
+            <span class="item-label">{% trans "Yes" %}</span>
+        </label>
+        </div>
+        <div class="radio" id="id_productive_activitiest">
+            <label>
+            {{ form.productive_activities.2.tag }}
+            <span class="item-label" > No</span>
+        </label>
+        </div>
+    </div>
+</div> </div>
+
+
+    <div class="layout-row row" id="contract-fields">
+                <div class="input-field col l4 m4 s12 reg-3">
+                    <label for="id_contract_duration">{% trans "Contract Duration" %}</label>
+                    {{ form.contract_duration }}
+                </div>
+                <div class="input-field col l4 m4 s12  reg-3">
+                    <label for="id_contract_fee">{% trans "Contract Fee" %}</label>
+                    {{ form.contract_fee }}
+                    <div style="position: absolute; right: 17px; top: 40%; font-size: 16px; font-weight: 400; transform: translateY(-50%);">€</div>
+                </div>
+                <div class="input-field col l4 m4 s12  reg-3">
+                    <label for="id_residual_rent">{% trans "Residual Rent" %}</label>
+                    {{ form.residual_rent }}
+                    <div style="position: absolute; right: 17px; top: 40%; font-size: 16px; font-weight: 400; transform: translateY(-50%);">€</div>
+                </div>
+</div>
+
+
+
+            <div class="col s4 reg-3">
+                <div class="row radio-field ">
+    <div class="col s12">
+        <label for="id_need_transfer_user_0">{% trans "Need Transfer User" %}</label>
+    </div>
+    <div class="col s12">
+        <div class="radio" id="id_need_transfer_user">
+            <label>
+            {{ form.need_transfer_user.1.tag }}
+            <span class="item-label">{% trans "Yes" %}</span>
+        </label>
+        </div>
+        <div class="radio" id="id_need_transfer_user">
+            <label>
+            {{ form.need_transfer_user.2.tag }}
+            <span class="item-label" > No</span>
+        </label>
+        </div>
+    </div>
+</div> </div>
+
+
+
+
+
+
+                <div class="col s4 reg-3">
+                <div class="row radio-field ">
+    <div class="col s12">
+        <label for="id_reclamation_activities_0">{% trans "Reclamation Activities" %}</label>
+    </div>
+    <div class="col s12">
+        <div class="radio" id="id_reclamation_activities">
+            <label>
+            {{ form.reclamation_activities.1.tag }}
+            <span class="item-label">{% trans "Yes" %}</span>
+        </label>
+        </div>
+        <div class="radio" id="id_reclamation_activities">
+            <label>
+            {{ form.reclamation_activities.2.tag }}
+            <span class="item-label" > No</span>
+        </label>
+        </div>
+    </div>
+</div> </div>
+
+
+
+                <div class="select-field col s4 reg-3">
+                    <label for="id_reclamation_intervention_type">{% trans "Reclamation Intervention Type" %}</label>
+                    {{ form.reclamation_intervention_type }}
+                </div>
+
+
+
+
+                <div class="input-field col s12 reg-3">
+                    <label for="id_reclamation_cost">{% trans "Reclamation Cost" %}</label>
+                    {{ form.reclamation_cost }}
+                    <div style="position: absolute; right: 17px; top: 40%; font-size: 16px; font-weight: 400; transform: translateY(-50%);">€</div>
+                </div>
+
+
+
+
+<div class="layout-row row">
+                <div class="col s6">
+                <div class="row radio-field ">
+    <div class="col s12">
+        <label for="id_reception_act_0">{% trans "Reception Act" %}</label>
+    </div>
+    <div class="col s12">
+        <div class="radio" id="id_reception_act">
+            <label>
+            {{ form.reception_act.1.tag }}
+            <span class="item-label">{% trans "Yes" %}</span>
+        </label>
+        </div>
+        <div class="radio" id="id_reception_act">
+            <label>
+            {{ form.reception_act.2.tag }}
+            <span class="item-label" >No</span>
+        </label>
+        </div>
+    </div>
+</div> </div>
+
+
+                <div class="input-field col s6">
+
+                    <label for="id_date_receipt_act">{% trans "Date Receipt Act" %}</label>
+            {{ form.date_receipt_act }}
+</div>
+
+</div>
+
+
+
+
+<div class="layout-row row">
+                <div class="col s6">
+                <div class="row radio-field ">
+    <div class="col s12">
+        <label for="id_purchase_contract_0">{% trans "Purchase Contract" %}</label>
+    </div>
+    <div class="col s12">
+        <div class="radio" id="id_purchase_contract">
+            <label>
+            {{ form.purchase_contract.1.tag }}
+            <span class="item-label">{% trans "Yes" %}</span>
+        </label>
+        </div>
+        <div class="radio" id="id_purchase_contract">
+            <label>
+            {{ form.purchase_contract.2.tag }}
+            <span class="item-label">No</span>
+        </label>
+        </div>
+    </div>
+</div></div>
+
+
+
+                <div class="input-field col s6">
+
+                    <label for="id_contract_date">{% trans "Contract Date" %}</label>
+            {{ form.contract_date }}
+                </div>
+
+</div>
+                <h4>{% trans "Contact Information" %}</h4>
+                <div class="input-field col s12">
+                    <label for="id_email">Email</label>
+                    {{ form.email }}
+                    {{ form.errors.email }}
+                </div>
+                <div class="col s12">
+            <button type="submit" class="btn btn-outline-info submit"> {% trans "Send" %} </button>
+            </div>
+            </div>
+            {{ form.origin }}
+        </form>
+
+
+    <script>
+
+
+
+
+    let languageDropdownIsOpened = false;
+
+    function toggleLanguageDropDown() {
+        console.log("clicked!", languageDropdownIsOpened)
+        const languageDropdown = document.getElementById("languageDropdown");
+        if(languageDropdownIsOpened) {
+            // close dropdown
+            languageDropdown.style.display = "none";
+        } else {
+            languageDropdown.style.display = "block";
+        }
+        languageDropdownIsOpened = !languageDropdownIsOpened;
+    }
+
+
+
+
+</script>
+{#        {{ form.errors }}#}
+{#                {% if form.errors %}#}
+{#    {% for field in form %}#}
+{#        {% for error in field.errors %}#}
+{#            <p class="text-danger" > {{ error }} </p>#}
+{#        {% endfor %}#}
+{#    {% endfor %}#}
+{#        {% endif %}#}
+
+
+
+{% endblock %}
+
+

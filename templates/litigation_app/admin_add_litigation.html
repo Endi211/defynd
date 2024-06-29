@@ -1,0 +1,1679 @@
+
+<!DOCTYPE html>
+
+<html lang="en-us" dir="ltr">
+<head>
+<title>Add litigation | Django site admin</title>
+
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/nav_sidebar.css">
+  <script src="/static/admin/js/nav_sidebar.js" defer></script>
+
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
+
+
+<script src="/admin/jsi18n/"></script>
+<link href="/static/css/admin/admin_styles.css" type="text/css" media="all" rel="stylesheet">
+<script src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script src="/static/admin/js/calendar.js"></script>
+<script src="/static/admin/js/jquery.init.js"></script>
+<script src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
+<script src="/static/admin/js/core.js"></script>
+<script src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script src="/static/admin/js/actions.js"></script>
+<script src="/static/admin/js/urlify.js"></script>
+<script src="/static/admin/js/prepopulate.js"></script>
+<script src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+<body class=" app-litigation_app model-litigation change-form"
+  data-admin-utc-offset="0">
+
+<!-- Container -->
+<div id="container">
+
+    <!-- Header -->
+
+    <div id="header">
+        <div id="branding">
+
+<h1 id="site-name"><a href="/admin/">Django administration</a></h1>
+
+        </div>
+
+
+        <div id="user-tools">
+
+                Welcome,
+                <strong>endi</strong>.
+
+
+
+                    <a href="/">View site</a> /
+
+
+
+
+
+
+                <a href="/admin/password_change/">Change password</a> /
+
+                <a href="/admin/logout/">Log out</a>
+
+        </div>
+
+
+
+    </div>
+
+    <!-- END Header -->
+
+<div class="breadcrumbs">
+<a href="/admin/">Home</a>
+&rsaquo; <a href="/admin/litigation_app/">Litigation_App</a>
+&rsaquo; <a href="/admin/litigation_app/litigation/">Litigations</a>
+&rsaquo; Add litigation
+</div>
+
+
+
+    <div class="main" id="main">
+
+
+
+<button class="sticky toggle-nav-sidebar" id="toggle-nav-sidebar" aria-label="Toggle navigation"></button>
+<nav class="sticky" id="nav-sidebar">
+  <input type="search" id="nav-filter"
+         placeholder="Start typing to filter…"
+         aria-label="Filter navigation items">
+
+
+
+
+    <div class="app-auth module">
+      <table>
+        <caption>
+          <a href="/admin/auth/" class="section" title="Models in the Authentication and Authorization application">Authentication and Authorization</a>
+        </caption>
+
+          <tr class="model-group">
+
+              <th scope="row"><a href="/admin/auth/group/">Groups</a></th>
+
+
+
+              <td><a href="/admin/auth/group/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+          <tr class="model-user">
+
+              <th scope="row"><a href="/admin/auth/user/">Users</a></th>
+
+
+
+              <td><a href="/admin/auth/user/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+      </table>
+    </div>
+
+    <div class="app-clients module">
+      <table>
+        <caption>
+          <a href="/admin/clients/" class="section" title="Models in the Clients application">Clients</a>
+        </caption>
+
+          <tr class="model-customer">
+
+              <th scope="row"><a href="/admin/clients/customer/">Customers</a></th>
+
+
+
+              <td><a href="/admin/clients/customer/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+      </table>
+    </div>
+
+    <div class="app-configurations module">
+      <table>
+        <caption>
+          <a href="/admin/configurations/" class="section" title="Models in the Configurations application">Configurations</a>
+        </caption>
+
+          <tr class="model-areatype">
+
+              <th scope="row"><a href="/admin/configurations/areatype/">Area types</a></th>
+
+
+
+              <td><a href="/admin/configurations/areatype/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+          <tr class="model-constrainttype">
+
+              <th scope="row"><a href="/admin/configurations/constrainttype/">Constraint types</a></th>
+
+
+
+              <td><a href="/admin/configurations/constrainttype/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+          <tr class="model-culturetype">
+
+              <th scope="row"><a href="/admin/configurations/culturetype/">Culture types</a></th>
+
+
+
+              <td><a href="/admin/configurations/culturetype/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+          <tr class="model-disputematter">
+
+              <th scope="row"><a href="/admin/configurations/disputematter/">Dispute matters</a></th>
+
+
+
+              <td><a href="/admin/configurations/disputematter/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+          <tr class="model-disputeobject">
+
+              <th scope="row"><a href="/admin/configurations/disputeobject/">Dispute objects</a></th>
+
+
+
+              <td><a href="/admin/configurations/disputeobject/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+          <tr class="model-reclamationinterventiontype">
+
+              <th scope="row"><a href="/admin/configurations/reclamationinterventiontype/">Reclamation intervention types</a></th>
+
+
+
+              <td><a href="/admin/configurations/reclamationinterventiontype/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+          <tr class="model-urbandestination">
+
+              <th scope="row"><a href="/admin/configurations/urbandestination/">Urban destinations</a></th>
+
+
+
+              <td><a href="/admin/configurations/urbandestination/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+      </table>
+    </div>
+
+    <div class="app-contracts_app module">
+      <table>
+        <caption>
+          <a href="/admin/contracts_app/" class="section" title="Models in the Contracts_App application">Contracts_App</a>
+        </caption>
+
+          <tr class="model-contract">
+
+              <th scope="row"><a href="/admin/contracts_app/contract/">Contracts</a></th>
+
+
+
+              <td><a href="/admin/contracts_app/contract/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+      </table>
+    </div>
+
+    <div class="app-dashboard_page module">
+      <table>
+        <caption>
+          <a href="/admin/dashboard_page/" class="section" title="Models in the Dashboard_Page application">Dashboard_Page</a>
+        </caption>
+
+          <tr class="model-statistic">
+
+              <th scope="row"><a href="/admin/dashboard_page/statistic/">Statistics</a></th>
+
+
+
+              <td></td>
+
+
+
+          </tr>
+
+      </table>
+    </div>
+
+    <div class="app-lawyers_app module">
+      <table>
+        <caption>
+          <a href="/admin/lawyers_app/" class="section" title="Models in the Lawyers_App application">Lawyers_App</a>
+        </caption>
+
+          <tr class="model-lawyer">
+
+              <th scope="row"><a href="/admin/lawyers_app/lawyer/">Lawyers</a></th>
+
+
+
+              <td><a href="/admin/lawyers_app/lawyer/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+      </table>
+    </div>
+
+    <div class="app-litigation_app module current-app">
+      <table>
+        <caption>
+          <a href="/admin/litigation_app/" class="section" title="Models in the Litigation_App application">Litigation_App</a>
+        </caption>
+
+          <tr class="model-litigation current-model">
+
+              <th scope="row"><a href="/admin/litigation_app/litigation/" aria-current="page">Litigations</a></th>
+
+
+
+              <td><a href="/admin/litigation_app/litigation/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+      </table>
+    </div>
+
+
+
+</nav>
+
+
+
+      <div class="content">
+
+
+
+        <!-- Content -->
+        <div id="content" class="colM">
+
+          <h1>Add litigation</h1>
+
+          <div id="content-main">
+
+
+
+<form enctype="multipart/form-data" method="post" id="litigation_form" novalidate><input type="hidden" name="csrfmiddlewaretoken" value="9ll0KxfkcDQVADBwpgQ6iUQzKuQPxZd5JDKofoltddmJvrlD4hCqEo2rYIlA2ydo">
+<div>
+
+
+
+
+
+
+
+  <fieldset class="module aligned ">
+
+
+
+        <div class="form-row field-is_closed">
+
+
+                <div class="checkbox-row">
+
+
+                        <input type="checkbox" name="is_closed" id="id_is_closed"><label class="vCheckboxLabel" for="id_is_closed">Closed</label>
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-customer field-value_list">
+
+
+                <div class="fieldBox field-customer">
+
+
+                        <label for="id_customer">Customer:</label>
+
+                            <div class="related-widget-wrapper">
+    <select name="customer" id="id_customer">
+  <option value="" selected>---------</option>
+
+  <option value="1">[1] </option>
+
+  <option value="2">[2] </option>
+
+  <option value="3">[3] Endi</option>
+
+  <option value="4">[4] dcc</option>
+
+  <option value="5">[5] don</option>
+
+  <option value="14">[14] </option>
+
+  <option value="25">[25] enddddas</option>
+
+</select>
+
+        <a class="related-widget-wrapper-link change-related" id="change_id_customer"
+            data-href-template="/admin/clients/customer/__fk__/change/?_to_field=code&amp;_popup=1"
+            title="Change selected customer"><img src="/static/admin/img/icon-changelink.svg" alt="Change"></a><a class="related-widget-wrapper-link add-related" id="add_id_customer"
+            href="/admin/clients/customer/add/?_to_field=code&amp;_popup=1"
+            title="Add another customer"><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a>
+
+</div>
+
+
+
+                </div>
+
+                <div class="fieldBox field-value_list">
+
+
+                        <label class="inline" for="id_value_list">Value list:</label>
+
+                            <select name="value_list" id="id_value_list">
+  <option value="" selected>---------</option>
+
+  <option value="25%">25%</option>
+
+  <option value="50%">50%</option>
+
+  <option value="75%">75%</option>
+
+  <option value="90%">90%</option>
+
+  <option value="100%">100%</option>
+
+</select>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-hyperlink_to_economics_sheet">
+
+
+                <div>
+
+
+                        <label for="id_hyperlink_to_economics_sheet">Hyperlink to economics sheet:</label>
+
+                            <input type="text" name="hyperlink_to_economics_sheet" class="vTextField" maxlength="50" id="id_hyperlink_to_economics_sheet">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-upload_contract">
+
+
+                <div>
+
+
+                        <label for="id_upload_contract">Upload contract:</label>
+
+                            <input type="file" name="upload_contract" id="id_upload_contract">
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Reference</h2>
+
+
+        <div class="form-row field-lawyer_reference">
+
+
+                <div>
+
+
+                        <label for="id_lawyer_reference">Lawyer reference:</label>
+
+                            <div class="related-widget-wrapper">
+    <select name="lawyer_reference" id="id_lawyer_reference">
+  <option value="" selected>---------</option>
+
+</select>
+
+        <a class="related-widget-wrapper-link change-related" id="change_id_lawyer_reference"
+            data-href-template="/admin/lawyers_app/lawyer/__fk__/change/?_to_field=id&amp;_popup=1"
+            title="Change selected lawyer"><img src="/static/admin/img/icon-changelink.svg" alt="Change"></a><a class="related-widget-wrapper-link add-related" id="add_id_lawyer_reference"
+            href="/admin/lawyers_app/lawyer/add/?_to_field=id&amp;_popup=1"
+            title="Add another lawyer"><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a><a class="related-widget-wrapper-link delete-related" id="delete_id_lawyer_reference"
+            data-href-template="/admin/lawyers_app/lawyer/__fk__/delete/?_to_field=id&amp;_popup=1"
+            title="Delete selected lawyer"><img src="/static/admin/img/icon-deletelink.svg" alt="Delete"></a>
+
+</div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-reference">
+
+
+                <div>
+
+
+                        <label for="id_reference">Reference:</label>
+
+                            <input type="text" name="reference" class="vTextField" maxlength="50" id="id_reference">
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Other Information</h2>
+
+
+        <div class="form-row field-reception_act">
+
+
+                <div>
+
+
+                        <label>Reception act:</label>
+
+                            <div id="id_reception_act" class="radiolist"><div>
+    <label for="id_reception_act_0"><input type="radio" name="reception_act" value="" class="radiolist" id="id_reception_act_0" checked>
+ None</label>
+
+</div><div>
+    <label for="id_reception_act_1"><input type="radio" name="reception_act" value="Yes" class="radiolist" id="id_reception_act_1">
+ Yes</label>
+
+</div><div>
+    <label for="id_reception_act_2"><input type="radio" name="reception_act" value="No" class="radiolist" id="id_reception_act_2">
+ No</label>
+
+</div>
+</div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-date_receipt_act">
+
+
+                <div>
+
+
+                        <label for="id_date_receipt_act">Date receipt act:</label>
+
+                            <input type="text" name="date_receipt_act" class="vTextField" maxlength="50" id="id_date_receipt_act">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-purchase_contract">
+
+
+                <div>
+
+
+                        <label>Purchase contract:</label>
+
+                            <div id="id_purchase_contract" class="radiolist"><div>
+    <label for="id_purchase_contract_0"><input type="radio" name="purchase_contract" value="" class="radiolist" id="id_purchase_contract_0" checked>
+ None</label>
+
+</div><div>
+    <label for="id_purchase_contract_1"><input type="radio" name="purchase_contract" value="Yes" class="radiolist" id="id_purchase_contract_1">
+ Yes</label>
+
+</div><div>
+    <label for="id_purchase_contract_2"><input type="radio" name="purchase_contract" value="No" class="radiolist" id="id_purchase_contract_2">
+ No</label>
+
+</div>
+</div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-contract_date">
+
+
+                <div>
+
+
+                        <label for="id_contract_date">Contract date:</label>
+
+                            <input type="text" name="contract_date" class="vTextField" maxlength="50" id="id_contract_date">
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Dispute</h2>
+
+
+        <div class="form-row field-dispute_matter">
+
+
+                <div>
+
+
+                        <label for="id_dispute_matter">Dispute matter:</label>
+
+                            <div class="related-widget-wrapper">
+    <select name="dispute_matter" id="id_dispute_matter">
+  <option value="" selected>---------</option>
+
+</select>
+
+        <a class="related-widget-wrapper-link change-related" id="change_id_dispute_matter"
+            data-href-template="/admin/configurations/disputematter/__fk__/change/?_to_field=id&amp;_popup=1"
+            title="Change selected dispute matter"><img src="/static/admin/img/icon-changelink.svg" alt="Change"></a><a class="related-widget-wrapper-link add-related" id="add_id_dispute_matter"
+            href="/admin/configurations/disputematter/add/?_to_field=id&amp;_popup=1"
+            title="Add another dispute matter"><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a><a class="related-widget-wrapper-link delete-related" id="delete_id_dispute_matter"
+            data-href-template="/admin/configurations/disputematter/__fk__/delete/?_to_field=id&amp;_popup=1"
+            title="Delete selected dispute matter"><img src="/static/admin/img/icon-deletelink.svg" alt="Delete"></a>
+
+</div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-dispute_object">
+
+
+                <div>
+
+
+                        <label for="id_dispute_object">Dispute object:</label>
+
+                            <div class="related-widget-wrapper">
+    <select name="dispute_object" id="id_dispute_object">
+  <option value="" selected>---------</option>
+
+</select>
+
+        <a class="related-widget-wrapper-link change-related" id="change_id_dispute_object"
+            data-href-template="/admin/configurations/disputeobject/__fk__/change/?_to_field=id&amp;_popup=1"
+            title="Change selected dispute object"><img src="/static/admin/img/icon-changelink.svg" alt="Change"></a><a class="related-widget-wrapper-link add-related" id="add_id_dispute_object"
+            href="/admin/configurations/disputeobject/add/?_to_field=id&amp;_popup=1"
+            title="Add another dispute object"><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a><a class="related-widget-wrapper-link delete-related" id="delete_id_dispute_object"
+            data-href-template="/admin/configurations/disputeobject/__fk__/delete/?_to_field=id&amp;_popup=1"
+            title="Delete selected dispute object"><img src="/static/admin/img/icon-deletelink.svg" alt="Delete"></a>
+
+</div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-starting_date">
+
+
+                <div>
+
+
+                        <label for="id_starting_date">Starting date:</label>
+
+                            <input type="text" name="starting_date" class="vDateField" size="10" id="id_starting_date">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-target_date">
+
+
+                <div>
+
+
+                        <label for="id_target_date">Target date:</label>
+
+                            <input type="text" name="target_date" class="vDateField" size="10" id="id_target_date">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-closing_date">
+
+
+                <div>
+
+
+                        <label for="id_closing_date">Closing date:</label>
+
+                            <input type="text" name="closing_date" class="vTextField" maxlength="20" id="id_closing_date">
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Value</h2>
+
+
+        <div class="form-row field-initial_estimation_value">
+
+
+                <div>
+
+
+                        <label for="id_initial_estimation_value">Initial estimation value:</label>
+
+                            <input type="text" name="initial_estimation_value" class="vTextField" maxlength="50" id="id_initial_estimation_value">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-target_value">
+
+
+                <div>
+
+
+                        <label for="id_target_value">Target value:</label>
+
+                            <input type="text" name="target_value" class="vTextField" maxlength="50" id="id_target_value">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-final_value">
+
+
+                <div>
+
+
+                        <label for="id_final_value">Final value:</label>
+
+                            <input type="text" name="final_value" class="vTextField" maxlength="50" id="id_final_value">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-revenue">
+
+
+                <div>
+
+
+                        <label for="id_revenue">Revenue:</label>
+
+                            <input type="text" name="revenue" class="vTextField" maxlength="50" id="id_revenue">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-total_cost">
+
+
+                <div>
+
+
+                        <label for="id_total_cost">Total cost:</label>
+
+                            <input type="text" name="total_cost" class="vTextField" maxlength="50" id="id_total_cost">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-EBIT">
+
+
+                <div>
+
+
+                        <label for="id_EBIT">EBIT:</label>
+
+                            <input type="text" name="EBIT" class="vTextField" maxlength="50" id="id_EBIT">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-EBIt_percentage">
+
+
+                <div>
+
+
+                        <label for="id_EBIt_percentage">EBIt percentage:</label>
+
+                            <input type="text" name="EBIt_percentage" class="vTextField" maxlength="50" id="id_EBIt_percentage">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-fee_percentuale">
+
+
+                <div>
+
+
+                        <label for="id_fee_percentuale">Fee percentuale:</label>
+
+                            <input type="text" name="fee_percentuale" class="vTextField" maxlength="50" id="id_fee_percentuale">
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Registration</h2>
+
+
+        <div class="form-row field-registration_type">
+
+
+                <div>
+
+
+                        <label class="required" for="id_registration_type">Registration type:</label>
+
+                            <select name="registration_type" id="id_registration_type">
+  <option value="Esproprio Agricolo">Agricultural Export</option>
+
+  <option value="Esproprio Residenziale Libera">Expropriation Residential Industrial Building</option>
+
+  <option value="Esproprio Industriale Libera">Expropriation Residential Industrial Building</option>
+
+  <option value="Esproprio Fabbricato Residenziale">Esproprio Fabbricato Residenziale</option>
+
+  <option value="Esproprio Fabbricato Industriale">Esproprio Fabbricato Industriale</option>
+
+  <option value="Area boschiva">Area boschiva</option>
+
+  <option value="Area industriale con fabbricati">Area industriale con fabbricati</option>
+
+  <option value="Area industriale senza fabbricati">Area industriale senza fabbricati</option>
+
+  <option value="Area Residenziale con fabbricati">Area Residenziale con fabbricati</option>
+
+  <option value="Area Residenziale senza fabbricati">Area Residenziale senza fabbricati</option>
+
+  <option value="Area Agricola con fabbricati">Area Agricola con fabbricati</option>
+
+  <option value="Area Agricola senza fabbricati">Area Agricola senza fabbricati</option>
+
+</select>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-prejudicial_registrations">
+
+
+                <div>
+
+
+                        <label for="id_prejudicial_registrations">Prejudicial registrations:</label>
+
+                            <input type="text" name="prejudicial_registrations" class="vTextField" maxlength="50" id="id_prejudicial_registrations">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-enrollment_amount">
+
+
+                <div>
+
+
+                        <label for="id_enrollment_amount">Enrollment amount:</label>
+
+                            <input type="text" name="enrollment_amount" class="vTextField" maxlength="50" id="id_enrollment_amount">
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Area</h2>
+
+
+        <div class="form-row field-surface_directly_concerned field-occupied_area field-residual_surface">
+
+
+                <div class="fieldBox field-surface_directly_concerned">
+
+
+                        <label for="id_surface_directly_concerned">Surface directly concerned:</label>
+
+                            <input type="text" name="surface_directly_concerned" class="vTextField" maxlength="50" id="id_surface_directly_concerned">
+                            <span class="meters"> m<sup>2</sup></span>
+
+
+                </div>
+
+                <div class="fieldBox field-occupied_area">
+
+
+                        <label class="inline" for="id_occupied_area">Occupied area:</label>
+
+                            <input type="text" name="occupied_area" class="vTextField" maxlength="50" id="id_occupied_area">
+                            <span class="meters"> m<sup>2</sup></span>
+
+
+                </div>
+
+                <div class="fieldBox field-residual_surface">
+
+
+                        <label class="inline" for="id_residual_surface">Residual surface:</label>
+
+                            <input type="text" name="residual_surface" class="vTextField" maxlength="50" id="id_residual_surface">
+
+                <span class="meters"> m<sup>2</sup></span>
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-area_address">
+
+
+                <div>
+
+
+                        <label for="id_area_address">Area address:</label>
+
+                            <input type="text" name="area_address" class="vTextField" maxlength="50" id="id_area_address">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-technical_reference">
+
+
+                <div>
+
+
+                        <label for="id_technical_reference">Technical reference:</label>
+
+                            <input type="text" name="technical_reference" class="vTextField" maxlength="50" id="id_technical_reference">
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Information Culture</h2>
+
+
+        <div class="form-row field-culture_type">
+
+
+                <div>
+
+
+                        <label for="id_culture_type">Culture type:</label>
+
+                            <div class="related-widget-wrapper">
+    <select name="culture_type" id="id_culture_type">
+  <option value="" selected>---------</option>
+
+</select>
+
+        <a class="related-widget-wrapper-link change-related" id="change_id_culture_type"
+            data-href-template="/admin/configurations/culturetype/__fk__/change/?_to_field=id&amp;_popup=1"
+            title="Change selected culture type"><img src="/static/admin/img/icon-changelink.svg" alt="Change"></a><a class="related-widget-wrapper-link add-related" id="add_id_culture_type"
+            href="/admin/configurations/culturetype/add/?_to_field=id&amp;_popup=1"
+            title="Add another culture type"><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a><a class="related-widget-wrapper-link delete-related" id="delete_id_culture_type"
+            data-href-template="/admin/configurations/culturetype/__fk__/delete/?_to_field=id&amp;_popup=1"
+            title="Delete selected culture type"><img src="/static/admin/img/icon-deletelink.svg" alt="Delete"></a>
+
+</div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-above_ground_quantification">
+
+
+                <div>
+
+
+                        <label for="id_above_ground_quantification">Above ground quantification:</label>
+
+                            <input type="text" name="above_ground_quantification" class="vTextField" maxlength="50" id="id_above_ground_quantification">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-fruit_pendants">
+
+
+                <div>
+
+
+                        <label>Fruit pendants:</label>
+
+                            <div id="id_fruit_pendants" class="radiolist"><div>
+    <label for="id_fruit_pendants_0"><input type="radio" name="fruit_pendants" value="" class="radiolist" id="id_fruit_pendants_0" checked>
+ None</label>
+
+</div><div>
+    <label for="id_fruit_pendants_1"><input type="radio" name="fruit_pendants" value="Yes" class="radiolist" id="id_fruit_pendants_1">
+ Yes</label>
+
+</div><div>
+    <label for="id_fruit_pendants_2"><input type="radio" name="fruit_pendants" value="No" class="radiolist" id="id_fruit_pendants_2">
+ No</label>
+
+</div>
+</div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-cultivator_type">
+
+
+                <div>
+
+
+                        <label class="required" for="id_cultivator_type">Cultivator type:</label>
+
+                            <select name="cultivator_type" id="id_cultivator_type">
+  <option value="Value 1" selected>Value 1</option>
+
+  <option value="Value 2">Value 2</option>
+
+</select>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-batch_disfiguration">
+
+
+                <div>
+
+
+                        <label>Batch disfiguration:</label>
+
+                            <div id="id_batch_disfiguration" class="radiolist"><div>
+    <label for="id_batch_disfiguration_0"><input type="radio" name="batch_disfiguration" value="" class="radiolist" id="id_batch_disfiguration_0" checked>
+ None</label>
+
+</div><div>
+    <label for="id_batch_disfiguration_1"><input type="radio" name="batch_disfiguration" value="Yes" class="radiolist" id="id_batch_disfiguration_1">
+ Yes</label>
+
+</div><div>
+    <label for="id_batch_disfiguration_2"><input type="radio" name="batch_disfiguration" value="No" class="radiolist" id="id_batch_disfiguration_2">
+ No</label>
+
+</div>
+</div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-description">
+
+
+                <div>
+
+
+                        <label for="id_description">Description:</label>
+
+                            <textarea name="description" cols="40" rows="10" class="vLargeTextField" id="id_description">
+</textarea>
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Free Residential Industrial Expropriation</h2>
+
+
+        <div class="form-row field-social_economic_reform field-urban_destination">
+
+
+                <div class="fieldBox field-social_economic_reform">
+
+
+                        <label>Social economic reform:</label>
+
+                            <div id="id_social_economic_reform" class="radiolist"><div>
+    <label for="id_social_economic_reform_0"><input type="radio" name="social_economic_reform" value="" class="radiolist" id="id_social_economic_reform_0" checked>
+ None</label>
+
+</div><div>
+    <label for="id_social_economic_reform_1"><input type="radio" name="social_economic_reform" value="Yes" class="radiolist" id="id_social_economic_reform_1">
+ Yes</label>
+
+</div><div>
+    <label for="id_social_economic_reform_2"><input type="radio" name="social_economic_reform" value="No" class="radiolist" id="id_social_economic_reform_2">
+ No</label>
+
+</div>
+</div>
+
+
+
+                </div>
+
+                <div class="fieldBox field-urban_destination">
+
+
+                        <label class="inline" for="id_urban_destination">Urban destination:</label>
+
+                            <div class="related-widget-wrapper">
+    <select name="urban_destination" id="id_urban_destination">
+  <option value="" selected>---------</option>
+
+</select>
+
+        <a class="related-widget-wrapper-link change-related" id="change_id_urban_destination"
+            data-href-template="/admin/configurations/urbandestination/__fk__/change/?_to_field=id&amp;_popup=1"
+            title="Change selected urban destination"><img src="/static/admin/img/icon-changelink.svg" alt="Change"></a><a class="related-widget-wrapper-link add-related" id="add_id_urban_destination"
+            href="/admin/configurations/urbandestination/add/?_to_field=id&amp;_popup=1"
+            title="Add another urban destination"><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a><a class="related-widget-wrapper-link delete-related" id="delete_id_urban_destination"
+            data-href-template="/admin/configurations/urbandestination/__fk__/delete/?_to_field=id&amp;_popup=1"
+            title="Delete selected urban destination"><img src="/static/admin/img/icon-deletelink.svg" alt="Delete"></a>
+
+</div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-transformation_coefficient">
+
+
+                <div>
+
+
+                        <label for="id_transformation_coefficient">Transformation coefficient:</label>
+
+                            <input type="text" name="transformation_coefficient" class="vTextField" maxlength="100" id="id_transformation_coefficient">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-IMU_final_declaration">
+
+
+                <div>
+
+
+                        <label for="id_IMU_final_declaration">IMU final declaration:</label>
+
+                            <input type="text" name="IMU_final_declaration" class="vTextField" maxlength="100" id="id_IMU_final_declaration">
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Expropriation Residential Industrial Building</h2>
+
+
+        <div class="form-row field-epoch_construction field-building_titles">
+
+
+                <div class="fieldBox field-epoch_construction">
+
+
+                        <label for="id_epoch_construction">Epoch construction:</label>
+
+                            <input type="text" name="epoch_construction" class="vTextField" maxlength="50" id="id_epoch_construction">
+
+
+
+                </div>
+
+                <div class="fieldBox field-building_titles">
+
+
+                        <label class="inline" for="id_building_titles">Building titles:</label>
+
+                            <textarea name="building_titles" cols="40" rows="10" class="vLargeTextField" id="id_building_titles">
+</textarea>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-extension_MQ field-residual_airspace field-MC_residui">
+
+
+                <div class="fieldBox field-extension_MQ">
+
+
+                        <label for="id_extension_MQ">Extension MQ:</label>
+
+                            <input type="text" name="extension_MQ" class="vTextField" maxlength="100" id="id_extension_MQ">
+
+
+
+                </div>
+
+                <div class="fieldBox field-residual_airspace">
+
+
+                        <label class="inline">Residual airspace:</label>
+
+                            <div id="id_residual_airspace" class="radiolist"><div>
+    <label for="id_residual_airspace_0"><input type="radio" name="residual_airspace" value="" class="radiolist" id="id_residual_airspace_0" checked>
+ None</label>
+
+</div><div>
+    <label for="id_residual_airspace_1"><input type="radio" name="residual_airspace" value="Yes" class="radiolist" id="id_residual_airspace_1">
+ Yes</label>
+
+</div><div>
+    <label for="id_residual_airspace_2"><input type="radio" name="residual_airspace" value="No" class="radiolist" id="id_residual_airspace_2">
+ No</label>
+
+</div>
+</div>
+
+
+
+                </div>
+
+                <div class="fieldBox field-MC_residui">
+
+
+                        <label class="inline" for="id_MC_residui">MC residui:</label>
+
+                            <input type="text" name="MC_residui" class="vTextField" maxlength="50" id="id_MC_residui">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-total_demolition field-partial_demolition">
+
+
+                <div class="fieldBox field-total_demolition">
+
+
+                        <label>Total demolition:</label>
+
+                            <div id="id_total_demolition" class="radiolist"><div>
+    <label for="id_total_demolition_0"><input type="radio" name="total_demolition" value="" class="radiolist" id="id_total_demolition_0" checked>
+ None</label>
+
+</div><div>
+    <label for="id_total_demolition_1"><input type="radio" name="total_demolition" value="Yes" class="radiolist" id="id_total_demolition_1">
+ Yes</label>
+
+</div><div>
+    <label for="id_total_demolition_2"><input type="radio" name="total_demolition" value="No" class="radiolist" id="id_total_demolition_2">
+ No</label>
+
+</div>
+</div>
+
+
+
+                </div>
+
+                <div class="fieldBox field-partial_demolition">
+
+
+                        <label class="inline" for="id_partial_demolition">Partial demolition:</label>
+
+                            <input type="text" name="partial_demolition" class="vTextField" maxlength="100" id="id_partial_demolition">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-storage_state field-productive_activities">
+
+
+                <div class="fieldBox field-storage_state">
+
+
+                        <label>Storage state:</label>
+
+                            <div id="id_storage_state" class="radiolist"><div>
+    <label for="id_storage_state_0"><input type="radio" name="storage_state" value="" class="radiolist" id="id_storage_state_0" checked>
+ None</label>
+
+</div><div>
+    <label for="id_storage_state_1"><input type="radio" name="storage_state" value="Great" class="radiolist" id="id_storage_state_1">
+ Great</label>
+
+</div><div>
+    <label for="id_storage_state_2"><input type="radio" name="storage_state" value="Good" class="radiolist" id="id_storage_state_2">
+ Good</label>
+
+</div><div>
+    <label for="id_storage_state_3"><input type="radio" name="storage_state" value="Enough" class="radiolist" id="id_storage_state_3">
+ Enough</label>
+
+</div><div>
+    <label for="id_storage_state_4"><input type="radio" name="storage_state" value="To be Restructured" class="radiolist" id="id_storage_state_4">
+ To be Restructured</label>
+
+</div>
+</div>
+
+
+
+                </div>
+
+                <div class="fieldBox field-productive_activities">
+
+
+                        <label class="inline">Productive activities:</label>
+
+                            <div id="id_productive_activities" class="radiolist"><div>
+    <label for="id_productive_activities_0"><input type="radio" name="productive_activities" value="" class="radiolist" id="id_productive_activities_0" checked>
+ None</label>
+
+</div><div>
+    <label for="id_productive_activities_1"><input type="radio" name="productive_activities" value="Yes" class="radiolist" id="id_productive_activities_1">
+ Yes</label>
+
+</div><div>
+    <label for="id_productive_activities_2"><input type="radio" name="productive_activities" value="No" class="radiolist" id="id_productive_activities_2">
+ No</label>
+
+</div>
+</div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-lease_agreement field-contract_duration">
+
+
+                <div class="fieldBox field-lease_agreement">
+
+
+                        <label>Lease agreement:</label>
+
+                            <div id="id_lease_agreement" class="radiolist"><div>
+    <label for="id_lease_agreement_0"><input type="radio" name="lease_agreement" value="" class="radiolist" id="id_lease_agreement_0" checked>
+ None</label>
+
+</div><div>
+    <label for="id_lease_agreement_1"><input type="radio" name="lease_agreement" value="Yes" class="radiolist" id="id_lease_agreement_1">
+ Yes</label>
+
+</div><div>
+    <label for="id_lease_agreement_2"><input type="radio" name="lease_agreement" value="No" class="radiolist" id="id_lease_agreement_2">
+ No</label>
+
+</div>
+</div>
+
+
+
+                </div>
+
+                <div class="fieldBox field-contract_duration">
+
+
+                        <label class="inline" for="id_contract_duration">Contract duration:</label>
+
+                            <input type="text" name="contract_duration" class="vTextField" maxlength="50" id="id_contract_duration">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-contract_fee field-residual_rent">
+
+
+                <div class="fieldBox field-contract_fee">
+
+
+                        <label for="id_contract_fee">Contract fee:</label>
+
+                            <input type="text" name="contract_fee" class="vTextField" maxlength="100" id="id_contract_fee">
+
+
+
+                </div>
+
+                <div class="fieldBox field-residual_rent">
+
+
+                        <label class="inline" for="id_residual_rent">Residual rent:</label>
+
+                            <input type="text" name="residual_rent" class="vTextField" maxlength="100" id="id_residual_rent">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-need_transfer_user field-reclamation_activities">
+
+
+                <div class="fieldBox field-need_transfer_user">
+
+
+                        <label>Need transfer user:</label>
+
+                            <div id="id_need_transfer_user" class="radiolist"><div>
+    <label for="id_need_transfer_user_0"><input type="radio" name="need_transfer_user" value="" class="radiolist" id="id_need_transfer_user_0" checked>
+ None</label>
+
+</div><div>
+    <label for="id_need_transfer_user_1"><input type="radio" name="need_transfer_user" value="Yes" class="radiolist" id="id_need_transfer_user_1">
+ Yes</label>
+
+</div><div>
+    <label for="id_need_transfer_user_2"><input type="radio" name="need_transfer_user" value="No" class="radiolist" id="id_need_transfer_user_2">
+ No</label>
+
+</div>
+</div>
+
+
+
+                </div>
+
+                <div class="fieldBox field-reclamation_activities">
+
+
+                        <label class="inline">Reclamation activities:</label>
+
+                            <div id="id_reclamation_activities" class="radiolist"><div>
+    <label for="id_reclamation_activities_0"><input type="radio" name="reclamation_activities" value="" class="radiolist" id="id_reclamation_activities_0" checked>
+ None</label>
+
+</div><div>
+    <label for="id_reclamation_activities_1"><input type="radio" name="reclamation_activities" value="Yes" class="radiolist" id="id_reclamation_activities_1">
+ Yes</label>
+
+</div><div>
+    <label for="id_reclamation_activities_2"><input type="radio" name="reclamation_activities" value="No" class="radiolist" id="id_reclamation_activities_2">
+ No</label>
+
+</div>
+</div>
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-reclamation_intervention_type field-reclamation_cost">
+
+
+                <div class="fieldBox field-reclamation_intervention_type">
+
+
+                        <label for="id_reclamation_intervention_type">Reclamation intervention type:</label>
+
+                            <div class="related-widget-wrapper">
+    <select name="reclamation_intervention_type" id="id_reclamation_intervention_type">
+  <option value="" selected>---------</option>
+
+</select>
+
+        <a class="related-widget-wrapper-link change-related" id="change_id_reclamation_intervention_type"
+            data-href-template="/admin/configurations/reclamationinterventiontype/__fk__/change/?_to_field=id&amp;_popup=1"
+            title="Change selected reclamation intervention type"><img src="/static/admin/img/icon-changelink.svg" alt="Change"></a><a class="related-widget-wrapper-link add-related" id="add_id_reclamation_intervention_type"
+            href="/admin/configurations/reclamationinterventiontype/add/?_to_field=id&amp;_popup=1"
+            title="Add another reclamation intervention type"><img src="/static/admin/img/icon-addlink.svg" alt="Add"></a><a class="related-widget-wrapper-link delete-related" id="delete_id_reclamation_intervention_type"
+            data-href-template="/admin/configurations/reclamationinterventiontype/__fk__/delete/?_to_field=id&amp;_popup=1"
+            title="Delete selected reclamation intervention type"><img src="/static/admin/img/icon-deletelink.svg" alt="Delete"></a>
+
+</div>
+
+
+
+                </div>
+
+                <div class="fieldBox field-reclamation_cost">
+
+
+                        <label class="inline" for="id_reclamation_cost">Reclamation cost:</label>
+
+                            <input type="text" name="reclamation_cost" class="vTextField" maxlength="50" id="id_reclamation_cost">
+
+
+
+                </div>
+
+        </div>
+
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="submit-row">
+
+<input type="submit" value="Save" class="default" name="_save">
+
+
+<input type="submit" value="Save and add another" name="_addanother">
+<input type="submit" value="Save and continue editing" name="_continue">
+
+
+</div>
+
+
+
+    <script id="django-admin-form-add-constants"
+            src="/static/admin/js/change_form.js"
+
+                data-model-name="litigation"
+
+            async>
+    </script>
+
+
+
+<script id="django-admin-prepopulated-fields-constants"
+        src="/static/admin/js/prepopulate_init.js"
+        data-prepopulated-fields="[]">
+</script>
+
+
+</div>
+</form></div>
+    <script src="/static/litigation_app/admin_scripts.js"></script>
+
+
+          <br class="clear">
+        </div>
+        <!-- END Content -->
+        <div id="footer"></div>
+      </div>
+    </div>
+</div>
+<!-- END Container -->
+</body>
+</html>

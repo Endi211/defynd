@@ -1,0 +1,132 @@
+
+.form-control {
+    margin: 3% 3% 3% 0;
+}
+
+
+body {
+    padding: 5% 8%;
+}
+
+.errorlist {
+    color: red;
+}
+
+/*form .help-block {*/
+/*    line-height: 12px;*/
+/*    position: relative;*/
+/*    top: -15px;*/
+/*    color: rgba(0, 0, 0, 0.6);*/
+/*    font-size: 75%;*/
+/*    left: 5px;*/
+/*}*/
+
+.messages {
+    padding-left: 0;
+}
+
+
+
+#id_gender > div:nth-child(1) > label {
+    display: none;
+}
+
+h4 {
+    padding-left: 10px;
+}
+
+
+.check-list {
+    margin-top: 3%;
+    margin-left: 10px;
+}
+
+
+.moving-field {
+    margin-top: 23px;
+}
+
+
+#phone-prefix-container {
+    width: 8%;
+    padding-right: 0;
+}
+
+#mobile-prefix-container {
+    width: 8%;
+    padding-right: 0;
+}
+
+
+#phone-container {
+    padding-left: 0;
+    }
+
+#mobile-container {
+    padding-left: 0;
+    }
+
+
+@media screen and (max-width: 1022px) {
+
+#email-container {
+    width: 100%;
+}
+
+    #phone-prefix-container {
+        width: 30%;
+        margin-top: 2px;
+    }
+
+    #phone-container {
+        width: 70%;
+    }
+
+    #mobile-prefix-container {
+        width: 30%;
+        margin-top: 2px;
+    }
+
+    #mobile-container {
+        width: 70%;
+    }
+
+
+}
+
+.custom-dropdown {
+  width: fit-content;
+  float: right;
+  position: relative;
+  margin-top: 0;
+    margin-bottom: 50px;
+}
+
+.custom-dropdown-content {
+  width: 100%;
+  margin-top: 1px;
+  display: none;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  position: absolute;
+}
+
+.custom-dropdown-option {
+  padding: 8px 20px;
+  width: 100%;
+  background: white;
+  user-select: none;
+  cursor: pointer;
+  display: block;
+}
+
+.custom-dropdown-option:hover {
+  background: lightgray;
+}
+
+.custom-toggle-dropdown {
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  padding: 8px 20px;
+  background: white;
+  user-select: none;
+  cursor: pointer;
+}

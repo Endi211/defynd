@@ -1,0 +1,640 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-22 12:59+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\clients\apps.py:7
+msgid "Clients"
+msgstr "Clienti"
+
+#: .\clients\models.py:7
+msgid "company"
+msgstr "Azienda"
+
+#: .\clients\models.py:8
+msgid "individual"
+msgstr "Individuo"
+
+#: .\clients\models.py:12 .\templates\clients\index.html:147
+msgid "Male"
+msgstr "Maschio"
+
+#: .\clients\models.py:13 .\templates\clients\index.html:152
+msgid "Female"
+msgstr "Femmina"
+
+#: .\clients\models.py:59
+msgid "code"
+msgstr "Codice Cliente:"
+
+#: .\clients\models.py:61 .\templates\clients\index.html:57
+msgid "Customer Type"
+msgstr "Tipologia Cliente"
+
+#: .\clients\models.py:63 .\templates\clients\index.html:65
+msgid "Company Name"
+msgstr "Azienda"
+
+#: .\clients\models.py:64 .\templates\clients\index.html:90
+msgid "Role"
+msgstr "Ruolo"
+
+#: .\clients\models.py:65 .\configurations\models.py:7
+#: .\contracts_app\models.py:11 .\lawyers_app\models.py:8
+#: .\templates\clients\index.html:81
+msgid "Name"
+msgstr "Nome"
+
+#: .\clients\models.py:66 .\templates\clients\index.html:86
+msgid "Last Name"
+msgstr "Cognome"
+
+#: .\clients\models.py:68 .\templates\clients\index.html:76
+msgid "Vat Number"
+msgstr "Partita IVA"
+
+#: .\clients\models.py:69 .\templates\clients\index.html:71
+msgid "Fiscal Code"
+msgstr "Codice Fiscale"
+
+#: .\clients\models.py:70 .\templates\clients\index.html:126
+msgid "Birth Place"
+msgstr "Luogo di nascita"
+
+#: .\clients\models.py:71 .\templates\clients\index.html:130
+msgid "Birthday"
+msgstr "Data di nascita"
+
+#: .\clients\models.py:72 .\templates\clients\index.html:141
+msgid "Gender"
+msgstr "Genere"
+
+#: .\clients\models.py:74
+msgid "Email"
+msgstr ""
+
+#: .\clients\models.py:78 .\templates\clients\index.html:107
+msgid "Phone"
+msgstr "Telefono"
+
+#: .\clients\models.py:79 .\templates\clients\index.html:117
+msgid "Mobile"
+msgstr ""
+
+#: .\clients\models.py:81 .\templates\clients\index.html:167
+msgid "Street"
+msgstr "Strada"
+
+#: .\clients\models.py:82 .\templates\clients\index.html:171
+msgid "City"
+msgstr "Cita"
+
+#: .\clients\models.py:83 .\templates\clients\index.html:175
+msgid "Post Number"
+msgstr "Codice Postale"
+
+#: .\clients\models.py:84 .\litigation_app\models.py:61
+msgid "Customer"
+msgstr "Cliente"
+
+#: .\clients\models.py:92
+msgid "customer"
+msgstr "Cliente"
+
+#: .\clients\models.py:93
+msgid "customers"
+msgstr "Clienti"
+
+#: .\clients\views.py:28
+msgid "Activation link has been sent to your email id"
+msgstr "Il link di attivazione è stato inviato al tuo ID email"
+
+#: .\clients\views.py:40
+msgid "Please confirm your email address to complete the registration"
+msgstr "Conferma il tuo indirizzo email per completare la registrazione"
+
+#: .\clients\views.py:56
+msgid ""
+"Your email has been confirmed! You can now make a litigation application."
+msgstr "La tua email è stata confermata! Ora puoi presentare una domanda di contenzioso."
+
+#: .\clients\views.py:59
+msgid "Activation link is invalid!"
+msgstr "Il link di attivazione non è valido!"
+
+#: .\configurations\models.py:10
+msgid "Area Type"
+msgstr "Tipo di area"
+
+#: .\configurations\models.py:11
+msgid "Area Types"
+msgstr "Tipi di area"
+
+#: .\configurations\models.py:24
+msgid "Constraint Type"
+msgstr "Tipo di vincolo"
+
+#: .\configurations\models.py:25
+msgid "Constraint Types"
+msgstr "Tipi di vincoli"
+
+#: .\configurations\models.py:34 .\litigation_app\models.py:96
+#: .\templates\litigation_app\index.html:137
+msgid "Culture Type"
+msgstr "Tipo di cultura"
+
+#: .\configurations\models.py:35
+msgid "Culture Types"
+msgstr "Tipi di cultura"
+
+#: .\configurations\models.py:44 .\litigation_app\models.py:72
+#: .\templates\litigation_app\index.html:53
+msgid "Dispute Matter"
+msgstr "Materia Controversia"
+
+#: .\configurations\models.py:45
+msgid "Dispute Matters"
+msgstr "Materie Controversia"
+
+#: .\configurations\models.py:54 .\litigation_app\models.py:73
+#: .\templates\litigation_app\index.html:57
+msgid "Dispute Object"
+msgstr "Oggetto Controversia"
+
+#: .\configurations\models.py:55
+msgid "Dispute Objects"
+msgstr "Oggetto Controversia"
+
+#: .\configurations\models.py:64 .\litigation_app\models.py:129
+#: .\templates\litigation_app\index.html:491
+msgid "Reclamation Intervention Type"
+msgstr "Tipo di intervento di bonifica"
+
+#: .\configurations\models.py:65
+msgid "Reclamation Intervention Types"
+msgstr "Tipi di intervento di bonifica"
+
+#: .\configurations\models.py:74 .\litigation_app\models.py:105
+#: .\templates\litigation_app\index.html:237
+msgid "Urban Destination"
+msgstr "Destinazione Urbana"
+
+#: .\configurations\models.py:75
+msgid "Urban Destinations"
+msgstr "Destinazioni Urbane"
+
+#: .\contracts_app\models.py:12 .\litigation_app\models.py:65
+msgid "Date"
+msgstr "Data"
+
+#: .\contracts_app\models.py:13
+msgid "Sign Date"
+msgstr "Firmare La Data"
+
+#: .\contracts_app\models.py:14
+msgid "Client"
+msgstr "Cliente"
+
+#: .\contracts_app\models.py:18 .\contracts_app\models.py:22
+msgid "Contract"
+msgstr "Contrarre"
+
+#: .\contracts_app\models.py:19
+msgid "Contracts"
+msgstr "Contratti"
+
+#: .\contracts_app\models.py:23
+msgid "Creator"
+msgstr "Creatore"
+
+#: .\contracts_app\models.py:24
+msgid "File"
+msgstr "File"
+
+#: .\contracts_app\models.py:27
+msgid "Attachment"
+msgstr "Allegato"
+
+#: .\contracts_app\models.py:28
+msgid "Attachments"
+msgstr "Allegati"
+
+#: .\dashboard_page\models.py:10
+msgid "Title"
+msgstr "Titolo"
+
+#: .\dashboard_page\models.py:11
+msgid "Number"
+msgstr "Numero"
+
+#: .\dashboard_page\models.py:12
+msgid "Initial Value"
+msgstr "Valore iniziale"
+
+#: .\dashboard_page\models.py:13
+msgid "Objective Value"
+msgstr "Valore oggettivo"
+
+#: .\dashboard_page\models.py:14 .\litigation_app\models.py:79
+msgid "Final Value"
+msgstr "Valore finale"
+
+#: .\dashboard_page\models.py:16
+msgid "Revue Value"
+msgstr ""
+
+#: .\dashboard_page\models.py:17
+msgid "Total Cost Value"
+msgstr "Valore di costo totale"
+
+#: .\dashboard_page\models.py:22
+msgid "Statistic"
+msgstr "Statistica"
+
+#: .\dashboard_page\models.py:23
+msgid "Statistics"
+msgstr "Statistiche"
+
+#: .\defynd\settings.py:153
+msgid "English"
+msgstr ""
+
+#: .\defynd\settings.py:154
+msgid "Italian"
+msgstr ""
+
+#: .\defynd\urls.py:35
+msgid "Litigation Management System"
+msgstr ""
+
+#: .\lawyers_app\models.py:14
+msgid "Lawyer"
+msgstr "Avvocato"
+
+#: .\lawyers_app\models.py:15
+msgid "Lawyers"
+msgstr "Avvocati"
+
+#: .\litigation_app\models.py:23 .\templates\litigation_app\index.html:159
+#: .\templates\litigation_app\index.html:187
+#: .\templates\litigation_app\index.html:221
+#: .\templates\litigation_app\index.html:289
+#: .\templates\litigation_app\index.html:322
+#: .\templates\litigation_app\index.html:384
+#: .\templates\litigation_app\index.html:409
+#: .\templates\litigation_app\index.html:450
+#: .\templates\litigation_app\index.html:476
+#: .\templates\litigation_app\index.html:517
+#: .\templates\litigation_app\index.html:551
+msgid "Yes"
+msgstr "Sì"
+
+#: .\litigation_app\models.py:45
+msgid "Value 1"
+msgstr "Valore 1"
+
+#: .\litigation_app\models.py:46
+msgid "Value 2"
+msgstr "Valore 2"
+
+#: .\litigation_app\models.py:51 .\templates\litigation_app\index.html:347
+msgid "Great"
+msgstr "Grande"
+
+#: .\litigation_app\models.py:52 .\templates\litigation_app\index.html:353
+msgid "Good"
+msgstr "Buona"
+
+#: .\litigation_app\models.py:53 .\templates\litigation_app\index.html:359
+msgid "Enough"
+msgstr "Sufficiente"
+
+#: .\litigation_app\models.py:54 .\templates\litigation_app\index.html:365
+msgid "To be Restructured"
+msgstr "Da Ristrutturare"
+
+#: .\litigation_app\models.py:59
+msgid "Litigation Code"
+msgstr "Codice di contenzioso"
+
+#: .\litigation_app\models.py:60
+msgid "Closed"
+msgstr "Chiuso"
+
+#: .\litigation_app\models.py:62
+msgid "Value List"
+msgstr "Lista dei valori"
+
+#: .\litigation_app\models.py:63
+msgid "Hyperlink to economics sheet"
+msgstr "Collegamento ipertestuale al foglio di economia"
+
+#: .\litigation_app\models.py:64
+msgid "Upload Contract"
+msgstr "Carica contratto"
+
+#: .\litigation_app\models.py:66 .\templates\litigation_app\index.html:101
+msgid "Lawyer Reference"
+msgstr "Riferimento avvocato"
+
+#: .\litigation_app\models.py:67 .\templates\litigation_app\index.html:99
+#: .\templates\litigation_app\index.html:106
+msgid "Reference"
+msgstr "Riferimento"
+
+#: .\litigation_app\models.py:68 .\templates\litigation_app\index.html:511
+msgid "Reception Act"
+msgstr "Ricezione Atto"
+
+#: .\litigation_app\models.py:69 .\templates\litigation_app\index.html:532
+msgid "Date Receipt Act"
+msgstr "Data ricezione atto"
+
+#: .\litigation_app\models.py:70 .\templates\litigation_app\index.html:545
+msgid "Purchase Contract"
+msgstr "Contratto di acquisto"
+
+#: .\litigation_app\models.py:71 .\templates\litigation_app\index.html:567
+msgid "Contract Date"
+msgstr "Data del contratto"
+
+#: .\litigation_app\models.py:74
+msgid "Starting Date"
+msgstr "Data di inizio"
+
+#: .\litigation_app\models.py:75
+msgid "Target Date"
+msgstr "Data obiettivo"
+
+#: .\litigation_app\models.py:76
+msgid "Closing Date"
+msgstr "Data di chiusura"
+
+#: .\litigation_app\models.py:77 .\templates\litigation_app\index.html:63
+msgid "Initial Estimation Value"
+msgstr "Valore di stima iniziale"
+
+#: .\litigation_app\models.py:78 .\templates\litigation_app\index.html:72
+msgid "Target Value"
+msgstr "Valore obiettivo"
+
+#: .\litigation_app\models.py:80
+msgid "Revenue"
+msgstr "Reddito"
+
+#: .\litigation_app\models.py:81
+msgid "Total Cost"
+msgstr "Costo totale"
+
+#: .\litigation_app\models.py:83
+msgid "EBIT Percentage"
+msgstr "Percentuale EBIT"
+
+#: .\litigation_app\models.py:84
+msgid "Fee Percentage"
+msgstr "Commissione percentuale"
+
+#: .\litigation_app\models.py:86 .\templates\litigation_app\index.html:82
+msgid "Registration Type"
+msgstr "Tipo di registrazione"
+
+#: .\litigation_app\models.py:87 .\templates\litigation_app\index.html:87
+msgid "Prejudicial Registrations"
+msgstr "Iscrizioni pregiudizievoli"
+
+#: .\litigation_app\models.py:88 .\templates\litigation_app\index.html:93
+msgid "Enrollment Amount"
+msgstr "Importo di iscrizione"
+
+#: .\litigation_app\models.py:90 .\templates\litigation_app\index.html:113
+msgid "Surface Directly Concerned"
+msgstr "Superficie direttamente interessata"
+
+#: .\litigation_app\models.py:91 .\templates\litigation_app\index.html:118
+msgid "Occupied Area"
+msgstr "Zona occupata"
+
+#: .\litigation_app\models.py:92 .\templates\litigation_app\index.html:125
+msgid "Residual Surface"
+msgstr "Superficie residua"
+
+#: .\litigation_app\models.py:94 .\templates\litigation_app\index.html:129
+msgid "Area Address"
+msgstr "Indirizzo di zona"
+
+#: .\litigation_app\models.py:95
+msgid "Technical Reference"
+msgstr "Riferimento tecnico"
+
+#: .\litigation_app\models.py:97 .\templates\litigation_app\index.html:143
+msgid "Above Ground Quantification"
+msgstr "Quantificazione Soprasuolo:"
+
+#: .\litigation_app\models.py:98 .\templates\litigation_app\index.html:153
+msgid "Fruit Pendants"
+msgstr "Frutti Pendenti"
+
+#: .\litigation_app\models.py:99 .\templates\litigation_app\index.html:173
+msgid "Cultivator Type"
+msgstr "Tipologia Coltivatore:"
+
+#: .\litigation_app\models.py:101 .\templates\litigation_app\index.html:181
+msgid "Batch Disfiguration"
+msgstr "Sconfigurazione Lotto"
+
+#: .\litigation_app\models.py:102 .\templates\litigation_app\index.html:204
+msgid "Description"
+msgstr "Descrizione"
+
+#: .\litigation_app\models.py:104 .\templates\litigation_app\index.html:215
+msgid "Social Economic Reform"
+msgstr "Riforma economica sociale"
+
+#: .\litigation_app\models.py:106 .\templates\litigation_app\index.html:245
+msgid "Transformation Coefficient"
+msgstr "Coefficiente di trasformazione"
+
+#: .\litigation_app\models.py:107 .\templates\litigation_app\index.html:249
+msgid "IMU Final Declaration"
+msgstr "Dichiarazione Fini IMU"
+
+#: .\litigation_app\models.py:109 .\templates\litigation_app\index.html:256
+msgid "Epoch Construction"
+msgstr "Costruzione d'epoca"
+
+#: .\litigation_app\models.py:110 .\templates\litigation_app\index.html:260
+msgid "Building Titles"
+msgstr "Titoli di costruzione"
+
+#: .\litigation_app\models.py:111 .\templates\litigation_app\index.html:265
+msgid "Extension MQ"
+msgstr "Estensione MQ"
+
+#: .\litigation_app\models.py:113 .\templates\litigation_app\index.html:316
+msgid "Residual Airspace"
+msgstr "Spazio aereo residuo"
+
+#: .\litigation_app\models.py:114 .\templates\litigation_app\index.html:270
+msgid "MC Residui"
+msgstr ""
+
+#: .\litigation_app\models.py:116 .\templates\litigation_app\index.html:283
+msgid "Total Demolition"
+msgstr "Demolizione totale"
+
+#: .\litigation_app\models.py:117 .\templates\litigation_app\index.html:305
+msgid "Partial Demolition"
+msgstr "Demolizione parziale"
+
+#: .\litigation_app\models.py:118 .\templates\litigation_app\index.html:341
+msgid "Storage State"
+msgstr "Stato di archiviazione"
+
+#: .\litigation_app\models.py:119 .\templates\litigation_app\index.html:403
+msgid "Productive Activities"
+msgstr "Attività produttive"
+
+#: .\litigation_app\models.py:121 .\templates\litigation_app\index.html:378
+msgid "Lease Agreement"
+msgstr "Contratto di locazione"
+
+#: .\litigation_app\models.py:122 .\templates\litigation_app\index.html:424
+msgid "Contract Duration"
+msgstr "Durata del contratto"
+
+#: .\litigation_app\models.py:124 .\templates\litigation_app\index.html:428
+msgid "Contract Fee"
+msgstr "Commissione di contratto"
+
+#: .\litigation_app\models.py:125 .\templates\litigation_app\index.html:433
+msgid "Residual Rent"
+msgstr "Affitto residuo"
+
+#: .\litigation_app\models.py:126 .\templates\litigation_app\index.html:444
+msgid "Need Transfer User"
+msgstr "Hai bisogno di un utente di trasferimento"
+
+#: .\litigation_app\models.py:128 .\templates\litigation_app\index.html:470
+msgid "Reclamation Activities"
+msgstr "Attività di bonifica"
+
+#: .\litigation_app\models.py:131 .\templates\litigation_app\index.html:499
+msgid "Reclamation Cost"
+msgstr "Costo di bonifica"
+
+#: .\litigation_app\models.py:138
+msgid "Litigation"
+msgstr ""
+
+#: .\litigation_app\models.py:139
+msgid "Litigations"
+msgstr ""
+
+#: .\litigation_app\views.py:25
+msgid "New litigation case"
+msgstr "Nuovo caso di contenzioso"
+
+#: .\litigation_app\views.py:26
+msgid "Customer with name "
+msgstr "Cliente con nome "
+
+#: .\litigation_app\views.py:26
+msgid " made an application"
+msgstr " ha presentato domanda"
+
+#: .\litigation_app\views.py:27
+msgid " with litigation id "
+msgstr " con id contenzioso "
+
+#: .\litigation_app\views.py:34
+msgid "Your application has been received"
+msgstr "La tua domanda è stata ricevuta"
+
+#: .\templates\acc_active_email.html:4
+msgid "Hi"
+msgstr "Ciao"
+
+#: .\templates\acc_active_email.html:5
+msgid "Please click on the link to confirm your registration,"
+msgstr "Fare clic sul collegamento per confermare la registrazione,"
+
+#: .\templates\admin\base_site.html:25
+msgid "Documentation"
+msgstr "Documentazione"
+
+#: .\templates\admin\base_site.html:29
+msgid "Change password"
+msgstr ""
+
+#: .\templates\admin\base_site.html:31
+msgid "Log out"
+msgstr ""
+
+#: .\templates\admin\clients\customer\change_form.html:18
+#: .\templates\admin\litigation_app\litigation\change_form.html:18
+msgid "Home"
+msgstr ""
+
+#: .\templates\admin\clients\customer\change_form.html:21
+#: .\templates\admin\litigation_app\litigation\change_form.html:21
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: .\templates\admin\clients\customer\change_form.html:43
+#: .\templates\admin\litigation_app\litigation\change_form.html:43
+msgid "Please correct the error below."
+msgstr ""
+
+#: .\templates\admin\clients\customer\change_form.html:43
+#: .\templates\admin\litigation_app\litigation\change_form.html:43
+msgid "Please correct the errors below."
+msgstr ""
+
+#: .\templates\clients\index.html:53 .\templates\litigation_app\index.html:80
+msgid "Registration"
+msgstr "Registrazione"
+
+#: .\templates\clients\index.html:165
+msgid "Address"
+msgstr "Indirizzo di zona"
+
+#: .\templates\clients\index.html:211 .\templates\litigation_app\index.html:579
+msgid "Send"
+msgstr "Inviare"
+
+#: .\templates\litigation_app\index.html:44
+msgid "Litigation Form"
+msgstr "Modulo di contenzioso"
+
+#: .\templates\litigation_app\index.html:111
+msgid "Area"
+msgstr "La zona"
+
+#: .\templates\litigation_app\index.html:133
+msgid "Building"
+msgstr "Costruzione"
+
+#: .\templates\litigation_app\index.html:572
+msgid "Contact Information"
+msgstr "Informazioni sui contatti"
+
+#, fuzzy
+#~| msgid "Prejudicial Registrations"
+#~ msgid "Prejudicial Registration"
+#~ msgstr "Iscrizioni pregiudizievoli"

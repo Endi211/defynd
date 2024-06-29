@@ -1,0 +1,243 @@
+{% extends 'clients/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load i18n_switcher %}
+
+{% block body %}
+
+<div class="custom-dropdown">
+          <div class="custom-toggle-dropdown" id="language-select" onclick="toggleLanguageDropDown()">
+
+
+              {% if '/en/' in request.path %}
+                    English
+                  {% else %}
+                    Italian
+                    {% endif %}
+
+          </div>
+            <div class="custom-dropdown-content" id="languageDropdown" style="display: none;">
+
+                <div>
+                  <a href="{{ request|switch_i18n:'en' }}" class="custom-dropdown-option">
+                    English
+                  </a>
+                </div>
+
+                <div>
+                  <a href="{{ request|switch_i18n:'it' }}" class="custom-dropdown-option">
+                    Italian
+                  </a>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li  {% if message.tags %} class=" {{ message.tags }} alert alert-success " {% endif %} > {{ message }} </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+            <div class="form-group">
+            <form method="POST">
+            {% csrf_token %}
+
+
+                <div class="row">
+                <h4>{% trans "Registration" %}</h4>
+
+
+                    <div class="select-field col s12">
+                <label for="id_customer_type"> {% trans "Customer Type" %}</label>
+                        {{ form.customer_type }}
+                        </div>
+
+
+                    <div class="input-field col s12 company-atr">
+
+                         {{ form.company_name }}
+                        <label for="id_company_name" class="">{% trans "Company Name" %}</label>
+                    </div>
+
+
+                    <div class="input-field col s6 company-atr">
+                    {{ form.fiscal_code }}
+                        <label for="id_fiscal_code" class="">{% trans "Fiscal Code" %}</label>
+                    </div>
+
+                    <div class="input-field col s6 company-atr">
+                    {{ form.vat_number }}
+                        <label for="id_vat_number" class="">{% trans "Vat Number" %}</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                    {{ form.name }}
+                        <label for="id_name" class="">{% trans "Name" %}</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                    {{ form.last_name }}
+                        <label for="id_last_name" class="">{% trans "Last Name" %}</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <label for="id_role" class="">{% trans "Role" %}</label>
+                    {{ form.role }}
+
+                        </div>
+
+                    <div class="layout-row row">
+
+
+                    <div class="input-field col s4 moving-field" id="email-container">
+
+                        <label for="id_email" class="">Email</label>
+                    {{ form.email }}
+                        {{ form.errors.email }}
+                     </div>
+
+
+                        <div class="select-field col s2 "  id="phone-prefix-container">
+                        <label for="id_phone_prefix" class="">{% trans "Phone" %}</label>
+                    {{ form.phone_prefix }}
+                    </div>
+
+
+                    <div class="input-field col s3 moving-field" id="phone-container">
+                    {{ form.phone }}
+                    </div>
+
+                        <div class="select-field col s2"  id="mobile-prefix-container">
+                            <label for="id_mobile_prefix" class="">{% trans "Mobile" %}</label>
+                    {{ form.mobile_prefix }}
+                    </div>
+                    <div class="input-field col s3 moving-field"  id="mobile-container">
+                    {{ form.mobile }}
+                    </div>
+                        </div>
+
+                    <div class="input-field col s6 individual-atr">
+                        <label for="id_birth_place" class="">{% trans "Birth Place" %}</label>
+                    {{ form.birth_place }}
+                    </div>
+                    <div class="input-field col s6  individual-atr">
+                        <label for="id_birthday" class="">{% trans "Birthday" %}</label>
+                    {{ form.birthday }}
+                        <span class="helper-text" data-error="wrong" data-success="right">dd/mm/yyyy</span>
+                    </div>
+
+
+
+                    <div class="layout-row row individual-atr">
+                        <div class="col s12 m12">
+<div class="row radio-field">
+    <div class="col s12">
+        <label for="id_gender_0" class="">{% trans "Gender" %}</label>
+    </div>
+    <div class="col s12" id="id_gender_container">
+        <div class="radio" id="id_gender">
+            <label>
+            {{ form.gender.1.tag }}
+            <span class="item-label">{% trans "Male" %}</span>
+        </label>
+        </div>
+        <div class="radio" id="id_gender"><label>
+            {{ form.gender.2.tag }}
+            <span class="item-label" >{% trans "Female" %}</span>
+        </label>
+        </div>
+    </div>
+</div>
+
+</div></div>
+
+
+
+
+
+
+                    <h4 style="margin-top: 3%">{% trans "Address" %}</h4>
+                    <div class="input-field col s4">
+                        <label for="id_street" class="">{% trans "Street" %}</label>
+                    {{ form.street }}
+                    </div>
+                    <div class="input-field col s4">
+                        <label for="id_city" class="">{% trans "City" %}</label>
+                    {{ form.city }}
+                    </div>
+                    <div class="input-field col s4">
+                        <label for="id_post_number" class="">{% trans "Post Number" %}</label>
+                    {{ form.post_number }}
+                    </div>
+
+                </div>
+
+                        <div class="check-list">
+            <p>
+      <label>
+        <input type="checkbox" class="filled-in"  />
+        <span>Agreement 1</span>
+      </label>
+    </p>
+                        <p>
+      <label>
+        <input type="checkbox" class="filled-in"  />
+        <span>Agreement 2</span>
+      </label>
+    </p>
+                        <p>
+      <label>
+        <input type="checkbox" class="filled-in"  />
+        <span>Agreement 3</span>
+      </label>
+    </p>
+                        <p>
+      <label>
+        <input type="checkbox" class="filled-in" />
+        <span>Agreement 4</span>
+      </label>
+    </p>
+                        </div>
+
+
+
+                <div class="col s12">
+            <button type="submit" class="btn btn-outline-info submit"> {% trans "Send" %} </button>
+            </div>
+                {{ form.origin }}
+        </form>
+
+{#                {% if form.errors %}#}
+{#    {% for field in form %}#}
+{#        {% for error in field.errors %}#}
+{#            <p class="text-danger" > {{ error }} </p>#}
+{#        {% endfor %}#}
+{#    {% endfor %}#}
+{#        {% endif %}#}
+
+            </div>
+<script>
+
+ let languageDropdownIsOpened = false;
+
+    function toggleLanguageDropDown() {
+        console.log("clicked!", languageDropdownIsOpened)
+        const languageDropdown = document.getElementById("languageDropdown");
+        if(languageDropdownIsOpened) {
+            // close dropdown
+            languageDropdown.style.display = "none";
+        } else {
+            languageDropdown.style.display = "block";
+        }
+        languageDropdownIsOpened = !languageDropdownIsOpened;
+    }
+
+
+</script>
+{% endblock %}

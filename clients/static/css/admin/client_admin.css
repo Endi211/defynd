@@ -1,0 +1,11 @@
+
+
+
+
+#customer_form > div > fieldset:nth-child(3) > div.form-row.field-phone_prefix.field-phone > div.fieldBox.field-phone > label {
+    display: none;
+}
+
+#customer_form > div > fieldset:nth-child(3) > div.form-row.field-mobile_prefix.field-mobile > div.fieldBox.field-mobile > label {
+    display: none;
+}
