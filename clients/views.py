@@ -12,7 +12,6 @@ from django.utils.translation import gettext as _
 from django.contrib import messages
 
 
-
 def registration(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
@@ -23,7 +22,7 @@ def registration(request):
             user.save()
             # to get the domain of the current site
             current_site = get_current_site(request)
-            mail_subject = _('Activation link has been sent to your email id')
+            mail_subject = _('Defynd: Activation link has been sent to your email id')
             message = render_to_string('acc_active_email.html', context={
                 'user': user,
                 'domain': current_site.domain,
@@ -35,7 +34,7 @@ def registration(request):
                 mail_subject, message, to=[to_email]
             )
             email.send()
-            response = _('Please confirm your email address to complete the registration')
+            response = _('A link has been sent to your email address to complete the registration')
             return HttpResponse(response)
     else:
         form = RegisterForm()
@@ -51,19 +50,15 @@ def activate(request, uidb64, token):
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
-        messages.success(request, _('Your email has been confirmed! You can now make a litigation application.'))
-        return redirect('litigation')
+        response = _('Your email has been confirmed! You can now make a litigation application.')
+        return HttpResponse(response)
+        # messages.success(request, _('Your email has been confirmed! You can now make a litigation application.'))
+        # return redirect('litigation')
         # response = _('Your email has been confirmed! You can now make a litigation application.')
         # return HttpResponse(response)
     else:
         response = _('Activation link is invalid!')
         return HttpResponse(response)
-
-
-
-
-
-
 
     # def registration(request):
 #     if request.method == 'POST':
