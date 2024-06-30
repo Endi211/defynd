@@ -51,7 +51,7 @@ def activate(request, uidb64, token):
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
-        messages.success(request, _('Your email has been confirmed! You can now make a litigation application.'))
+        # messages.success(request, _('Your email has been confirmed! You can now make a litigation application.'))
         return redirect('litigation')
         # response = _('Your email has been confirmed! You can now make a litigation application.')
         # return HttpResponse(response)
