@@ -5,9 +5,12 @@ from django.core.mail import send_mail
 from .forms import LitigationRegisterForm
 from clients.models import Customer
 from django.utils.translation import gettext as _
-
+from dotenv import load_dotenv
+import os
 
 # Create your views here.
+
+load_dotenv()
 
 
 def litigation(request):
@@ -25,10 +28,10 @@ def litigation(request):
                 subject=_("New litigation case"),
                 message=_(f'Customer with name ') + f'[C0{client.code}]{client.name} {client.last_name}' + _(' made an application') +
                         _(' with litigation id ') + f'[L0{litigation_current_app.litigation_code}]',
-                from_email='memelelouch@gmail.com',
+                from_email=os.environ.get("EMAIL_HOST_USER"),
                 fail_silently=False,
                 auth_user=None,
-                recipient_list=['endisefa@gmail.com']
+                recipient_list=os.environ.get("ADMIN_EMAIL")
             )
 
             messages.success(request, _("Your application has been received"))

@@ -1,0 +1,66 @@
+
+
+
+
+#id_EBIT, #id_EBIt_percentage {
+    background-color: azure;
+}
+
+/*.aligned label {*/
+/*    float: initial;*/
+/*}*/
+
+
+
+.fieldBox.field-surface_directly_concerned > label, .fieldBox.field-occupied_area > label,
+.fieldBox.field-residual_surface > label, .fieldBox.field-building_titles > label, .fieldBox.field-extension_MQ > label,
+.fieldBox.field-residual_airspace > label, .fieldBox.field-MC_residui > label, .fieldBox.field-contract_fee > label,
+.fieldBox.field-residual_rent > label, .fieldBox.field-contract_duration > label, .fieldBox.field-customer > label,
+.fieldBox.field-value_list > label {
+    float: initial;
+}
+
+
+
+.form-row.field-initial_estimation_value > div::after, .form-row.field-target_value > div::after, .form-row.field-target_value > div::after,
+.form-row.field-revenue > div::after, .form-row.field-total_cost > div::after, .form-row.field-EBIT > div::after, .form-row.field-final_value > div::after,
+.form-row.field-enrollment_amount > div::after, .form-row.field-above_ground_quantification > div::after,
+.fieldBox.field-contract_fee::after, .fieldBox.field-residual_rent::after, .fieldBox.field-reclamation_cost::after,
+.fieldBox.field-epoch_construction::after {
+    content: "€";
+    position: relative;
+    right: 16px;
+    top: 2px;
+}
+
+.form-row.field-EBIt_percentage > div::after, .form-row.field-fee_percentuale > div::after {
+    content: "%";
+    position: relative;
+    right: 16px;
+    top: 2px;
+}
+
+
+.fieldBox.field-surface_directly_concerned, .fieldBox.field-occupied_area {
+    margin-right: 10px;
+}
+
+
+#id_storage_state > div:nth-child(2) > label, #id_storage_state > div:nth-child(3) > label {
+    margin-right: 22px;
+}
+
+/*.form-row.field-surface_directly_concerned > div::after{*/
+/*    content: "m2";*/
+/*    position: relative;*/
+/*    right: 16px;*/
+/*    top: 2px;*/
+/*}*/
+
+
+.meters {
+    position: relative;
+    left: 255px;
+    top: -23px;
+}
+

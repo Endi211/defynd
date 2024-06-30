@@ -1,0 +1,123 @@
+/*KPI CSS*/
+
+.kpi-container {
+    width: 100%
+}
+
+.circle-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.circle {
+    border-radius: 50%;
+    border: 10px solid #00FFFF;
+    width: 130px;
+    height: 130px;
+    margin-top: 40px;
+    position: relative;
+}
+
+.circle > span {
+    font-size: 4.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.data-container {
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabular-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.table-side {
+    width: calc(50% - 5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 25px;
+}
+
+.table-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.row-value {
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    width: 50%;
+}
+
+.row-title {
+    display: block;
+    width: 50%;
+}
+.bottom-title {
+    width: 100%;
+    margin-top: 80px;
+    margin-left: 20px;
+}
+
+.month-value {
+    font-size: 3rem;
+
+}
+.month-title {
+    font-size: 18px;
+}
+
+
+@media screen and (max-width: 974px) {
+
+    h1 {
+        color: red;
+    }
+
+    .circle-container {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
