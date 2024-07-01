@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from clients.token import account_activation_token
@@ -10,7 +10,7 @@ from django.core.mail import EmailMessage
 from .models import Customer
 from django.utils.translation import gettext as _
 from django.contrib import messages
-from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 
 def registration(request):
@@ -51,8 +51,8 @@ def activate(request, uidb64, token):
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
-        # messages.success(request, _('Your email has been confirmed! You can now make a litigation application.'))
-        return redirect('litigation')
+        messages.success(request, _('Your email has been confirmed! You can now make a litigation application.'))
+        return HttpResponseRedirect(reverse('litigation'))
         # response = _('Your email has been confirmed! You can now make a litigation application.')
         # return HttpResponse(response)
     else:

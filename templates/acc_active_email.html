@@ -2,6 +2,6 @@
 
 {% autoescape off %}
 {% trans "Hi" %} {{ user.name }},
-{% trans "Please click on the link to confirm your registration. After confirming, you will be redirected to Litigation application" %}
+{% trans "Please click on the link to confirm your registration. After confirming, you will be redirected to Litigation application." %}
 http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
 {% endautoescape %}

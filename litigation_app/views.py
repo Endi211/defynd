@@ -31,7 +31,7 @@ def litigation(request):
                 from_email=os.environ.get("EMAIL_HOST_USER"),
                 fail_silently=False,
                 auth_user=None,
-                recipient_list=os.environ.get("ADMIN_EMAIL")
+                recipient_list=[os.environ.get("ADMIN_EMAIL")]
             )
 
             messages.success(request, _("Your application has been received"))
