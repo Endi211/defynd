@@ -158,7 +158,9 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
+SECURE_SSL_REDIRECT = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

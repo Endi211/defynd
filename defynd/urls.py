@@ -24,7 +24,7 @@ urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
     path('registration/', registration, name='registration'),
     path('litigation/', litigation, name='litigation'),
-    path('activate/<uidb64>/<token>',
+    path('activate/<uidb64>/<token>/',
          activate, name='activate'),
 )
 
