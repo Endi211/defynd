@@ -38,7 +38,7 @@ def registration(request):
                 mail_subject, message, to=[to_email]
             )
             email.send()
-            response = _('A link has been sent to your email address to complete the registration')
+            response = _('A link has been sent to your email address to complete your registration')
             return HttpResponse(response)
     else:
         form = RegisterForm()
@@ -46,6 +46,12 @@ def registration(request):
 
 
 def activate(request, uidb64, token):
+    # Check if activation has already been processed in this session
+    if request.session.get('activation_processed', False):
+        messages.info(request, _('Your account is already activated.'))
+        logger.info("Activation already processed in this session.")
+        return HttpResponseRedirect(reverse('litigation'))
+
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
         user = Customer.objects.get(code=uid)
@@ -58,28 +64,19 @@ def activate(request, uidb64, token):
             if not user.is_active:
                 user.is_active = True
                 user.save()
+                request.session['activation_processed'] = True
                 messages.success(request, _('Your email has been confirmed! You can now make a litigation application.'))
-                logger.info("User activated successfully.")
+                logger.info(f"User {user.email} activated successfully.")
                 return HttpResponseRedirect(reverse('litigation'))
             else:
                 messages.info(request, _('Your account is already activated.'))
-                logger.info("User already activated.")
+                logger.info(f"User {user.email} already activated.")
                 return HttpResponseRedirect(reverse('litigation'))
         else:
-            logger.warning("Invalid token.")
+            logger.warning(f"Invalid token for user {user.email}.")
             return HttpResponse(_('Activation link is invalid!'), status=400)
     else:
         logger.warning("User not found.")
         return HttpResponse(_('Activation link is invalid!'), status=400)
 
-    # def registration(request):
-#     if request.method == 'POST':
-#         form = RegisterForm(request.POST)
-#         if form.is_valid():
-#
-#             form.save()
-#             messages.success(request, f"You have been registered")
-#             return HttpResponseRedirect(request.path_info)
-#     else:
-#         form = RegisterForm()
-#     return render(request, 'clients/index.html', {'form': form})
+

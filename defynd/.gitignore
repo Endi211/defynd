@@ -1,6 +1,6 @@
 
-venv
+defynd-app/venv
 .env
-.idea
-__pycache__
-db.sqlite3
+defynd-app/.idea
+defynd-app/__pycache__
+defynd-app/db.sqlite3
