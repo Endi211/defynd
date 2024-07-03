@@ -11,6 +11,9 @@ from .models import Customer
 from django.utils.translation import gettext as _
 from django.contrib import messages
 from django.urls import reverse
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 def registration(request):
@@ -46,18 +49,28 @@ def activate(request, uidb64, token):
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
         user = Customer.objects.get(code=uid)
-    except(TypeError, ValueError, OverflowError, Customer.DoesNotExist):
+    except (TypeError, ValueError, OverflowError, Customer.DoesNotExist) as e:
         user = None
-    if user is not None and account_activation_token.check_token(user, token):
-        user.is_active = True
-        user.save()
-        messages.success(request, _('Your email has been confirmed! You can now make a litigation application.'))
-        return HttpResponseRedirect(reverse('litigation'))
-        # response = _('Your email has been confirmed! You can now make a litigation application.')
-        # return HttpResponse(response)
+        logger.error(f"Error decoding UID or retrieving user: {e}")
+
+    if user is not None:
+        if account_activation_token.check_token(user, token):
+            if not user.is_active:
+                user.is_active = True
+                user.save()
+                messages.success(request, _('Your email has been confirmed! You can now make a litigation application.'))
+                logger.info("User activated successfully.")
+                return HttpResponseRedirect(reverse('litigation'))
+            else:
+                messages.info(request, _('Your account is already activated.'))
+                logger.info("User already activated.")
+                return HttpResponseRedirect(reverse('litigation'))
+        else:
+            logger.warning("Invalid token.")
+            return HttpResponse(_('Activation link is invalid!'), status=400)
     else:
-        response = _('Activation link is invalid!')
-        return HttpResponse(response)
+        logger.warning("User not found.")
+        return HttpResponse(_('Activation link is invalid!'), status=400)
 
     # def registration(request):
 #     if request.method == 'POST':
