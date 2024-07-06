@@ -48,7 +48,7 @@ def registration(request):
 def activate(request, uidb64, token):
     # Check if activation has already been processed in this session
     if request.session.get('activation_processed', False):
-        messages.info(request, _('Your account is already activated.'))
+        messages.info(request, _('Your account has been activated. You can now make a litigation application.'))
         logger.info("Activation already processed in this session.")
         return HttpResponseRedirect(reverse('litigation'))
 
